@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://github.com/wuaisong/wuaisong.github.io</id>
+    <id>https://wuaisong.github.io</id>
     <title>Gridea</title>
-    <updated>2022-01-04T02:53:01.948Z</updated>
+    <updated>2022-01-04T02:54:39.173Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://github.com/wuaisong/wuaisong.github.io"/>
-    <link rel="self" href="https://github.com/wuaisong/wuaisong.github.io/atom.xml"/>
+    <link rel="alternate" href="https://wuaisong.github.io"/>
+    <link rel="self" href="https://wuaisong.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://github.com/wuaisong/wuaisong.github.io/images/avatar.png</logo>
-    <icon>https://github.com/wuaisong/wuaisong.github.io/favicon.ico</icon>
+    <logo>https://wuaisong.github.io/images/avatar.png</logo>
+    <icon>https://wuaisong.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://github.com/wuaisong/wuaisong.github.io/post/hello-gridea/</id>
-        <link href="https://github.com/wuaisong/wuaisong.github.io/post/hello-gridea/">
+        <id>https://wuaisong.github.io/post/hello-gridea/</id>
+        <link href="https://wuaisong.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
