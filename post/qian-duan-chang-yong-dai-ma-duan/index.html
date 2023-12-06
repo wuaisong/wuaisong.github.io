@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="">
+<meta name="description" content="欢迎访问[SAM]的个人博客">
+<meta name="author" content="kveln">
+<title>前端常用代码段 | SAM</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="前端常用代码段 | SAM » Feed"
+  href="https://wuaisong.github.io/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://wuaisong.github.io/styles/main.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+  <meta property="og:description" content="前端常用代码段" />
+  <meta property="og:url" content="https://wuaisong.github.io/post/qian-duan-chang-yong-dai-ma-duan/" />
+  <meta property="og:locale" content="zh-CN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SAM" />
+  <!-- <script src="../assets/styles/scripts/tocScript.js"></script> -->
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="https://wuaisong.github.io">SAM</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/">首页</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/tags">标签</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/archives">归档</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/post/about">关于</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          <div class="gridea-search-container">
+            <form id="gridea-search-form" style="position: relative" data-update="1701839211925"
+              action="/search/index.html">
+              <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+              <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- Page Header -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="https://wuaisong.github.io">SAM</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/">首页</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/tags">标签</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/archives">归档</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/post/about">关于</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          <div class="gridea-search-container">
+            <form id="gridea-search-form" style="position: relative" data-update="1701839211925"
+              action="/search/index.html">
+              <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+              <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="masthead" style="background-image: url('https://wuaisong.github.io/media/images/home-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+          <!-- 没Title为其他页面Header -->
+          
+            <!-- 没Title并且有headerType为Post：文章Header -->
+            <div class="post-heading">
+              <span class="tags">
+                
+                <a href="https://wuaisong.github.io/tag/-H2gYG6ej/" class="tag">前端</a>
+                
+              </span>
+              <h1>前端常用代码段</h1>
+              <span class="meta">
+                Posted on
+                2023-11-17，5 min read
+              </span>
+            </div>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+  <!-- Post Content -->
+  <article id="post-content-article">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto post-content-container">
+          
+          <h1 id="行内编辑">行内编辑</h1>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;https://cdn.staticfile.org/vue/2.7.2/vue.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- 引入样式 --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/element-ui/lib/theme-chalk/index.css&quot;&gt;
+&lt;!-- 引入组件库 --&gt;
+&lt;script src=&quot;https://unpkg.com/element-ui/lib/index.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;el-form ref=&quot;tableFrom&quot; :model=&quot;tableFrom&quot; :rules=&quot;tableFromRules&quot;&gt;
+      &lt;el-table :data=&quot;tableFrom.tableData&quot; style=&quot;width: 100%;&quot;&gt;
+        &lt;el-table-column label=&quot;ID&quot; min-width=&quot;180&quot;&gt;
+          &lt;template slot-scope=&quot;scope&quot;&gt;
+            &lt;el-form-item :prop=&quot;'tableData.' + scope.$index + '.id'&quot; :rules=&quot;tableFromRules.id&quot;&gt;
+              &lt;el-input v-model=&quot;scope.row.id&quot;&gt;&lt;/el-input&gt;
+            &lt;/el-form-item&gt;
+          &lt;/template&gt;
+        &lt;/el-table-column&gt;
+        &lt;el-table-column label=&quot;name&quot; min-width=&quot;180&quot;&gt;
+          &lt;template slot-scope=&quot;scope&quot;&gt;
+            &lt;el-form-item :prop=&quot;'tableData.' + scope.$index + '.name'&quot; :rules=&quot;tableFromRules.name&quot;&gt;
+              &lt;el-input v-model=&quot;scope.row.name&quot;&gt;&lt;/el-input&gt;
+            &lt;/el-form-item&gt;
+          &lt;/template&gt;
+        &lt;/el-table-column&gt;
+        &lt;el-table-column label=&quot;操作&quot; min-width=&quot;80&quot;&gt;
+          &lt;template slot-scope=&quot;scope&quot;&gt;
+            &lt;el-button type=&quot;text&quot; @click=&quot;insert(scope.$index)&quot;&gt;插入当前行&lt;/el-button&gt;
+            &lt;el-button type=&quot;text&quot; @click=&quot;del(scope.$index)&quot;&gt;删除&lt;/el-button&gt;
+          &lt;/template&gt;
+        &lt;/el-table-column&gt;
+      &lt;/el-table&gt;
+      &lt;el-button type=&quot;success&quot; icon=&quot;el-icon-plus&quot; plain style=&quot;margin-top: 10px; width: 100%;&quot; @click=&quot;add()&quot;&gt;添加
+      &lt;/el-button&gt;
+    &lt;/el-form&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    var app = new Vue({
+      el: '#app',
+      data: {
+        tableFrom: {
+          tableData: []
+        },
+        tableFromRules: {
+          id: [{
+            required: true,
+            message: '请输入id',
+            trigger: 'blur'
+          }],
+          name: [{
+            required: true,
+            message: '请输入name',
+            trigger: 'blur'
+          }]
+        }
+      },
+      mounted() {},
+      methods: {
+        add() {
+          this.tableFrom.tableData.push({
+            id: '',
+            name: ''
+          })
+        },
+        insert(index) {
+          this.tableFrom.tableData.splice(index, 0, {
+            id: '',
+            name: ''
+          })
+        },
+        del(index) {
+          this.tableFrom.tableData.splice(index, 1)
+        }
+      }
+    })
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h1 id="防抖函数">防抖函数</h1>
+<pre><code>// 防抖：延迟执行
+// 场景示例：输入框输入后的联想或查找（输入过程中不触发，输入完成后才触发）
+function debounce(fn, delay) {
+  let timer = null;
+  return function() {
+    // 如果当前有待执行任务，清除待执行任务
+    if (timer) {
+      clearTimeout(timer);
+    }
+    // 延迟delay毫秒后执行任务
+    timer = setTimeout(() =&gt; {
+      fn.apply(this, arguments);
+    }, delay);
+  }
+}
+
+// 防抖：支持立即执行
+// 场景示例：提交按钮防止重复触发（点击立即提交，并防止短时间内误触）
+function debounce(fn, delay, immediate) {
+  let timer = null;
+  return function() {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    // 如果需要立即执行
+    if (immediate) {
+      // 每次触发都会更新timer，
+      // 只有第一次触发，或者在延迟delay毫秒后timer被清除，
+      // timer才为null，
+      // 通过timer是否有值，来判断是否要执行
+      if (!timer) {
+        fn.apply(this, arguments);
+      }
+      // 延迟delay毫秒后清除timer
+      timer = setTimeout(() =&gt; {
+        timer = null;
+      }, delay);
+    } else {
+      timer = setTimeout(() =&gt; {
+        fn.apply(this, arguments);
+      }, delay);
+    }
+  }
+}
+</code></pre>
+<h1 id="节流函数">节流函数</h1>
+<pre><code>// 节流
+// 场景示例：滚动、鼠标跟随、元素拖动拉伸等高频触发场景
+function throttle(fn, delay) {
+  let timestamp = 0;
+  return function() {
+    let now = Date.now();
+    // 当前时间距离上次触发的时间戳大于delay毫秒时才执行任务
+    if (now - timestamp &gt; delay) {
+      fn.apply(this, arguments);
+      timestamp = now;
+    }
+  }
+}
+</code></pre>
+
+          <div class="toc-container"><ul class="markdownIt-TOC">
+<li><a href="#%E8%A1%8C%E5%86%85%E7%BC%96%E8%BE%91">行内编辑</a></li>
+<li><a href="#%E9%98%B2%E6%8A%96%E5%87%BD%E6%95%B0">防抖函数</a></li>
+<li><a href="#%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0">节流函数</a></li>
+</ul>
+</div>
+          
+          <hr />
+          <p class="next-post">下一篇：
+            <a href="https://wuaisong.github.io/post/redis-cong-ru-men-dao-jing-tong/">
+              <span class="post-title">
+                Redis从入门到精通&rarr;
+              </span>
+            </a>
+          </p>
+          
+          <div class="comment" style="text-align: center;">
+            
+
+            
+            
+          </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <!-- <li class="list-inline-item">
+              <a href="https://wuaisong.github.io/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li> -->
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>SAM</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://wuaisong.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://wuaisong.github.io/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  
+  <div id="landlord-parent">
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+</div>
+
+<script type="text/javascript">
+    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+        //移动端
+        console.log("------ 移动端");
+    } else {
+        console.log("------ PC端 " + navigator.userAgent);
+
+        addScript("https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js", () => {
+            // 加载完成后再loadlive2d
+            loadlive2d("live2d", "https://wuaisong.github.io/media/live2d/assets/hijiki.model.json");
+        });
+
+        var home_Path = "https://wuaisong.github.io/";
+        addScript("https://wuaisong.github.io/media/live2d/js/message.js", () => { });
+    }
+
+    // 插入js文件，完成后callback
+    function addScript(jsfile, callback) {
+        var landlord_parent = document.getElementById("landlord-parent");
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = jsfile;
+        landlord_parent.appendChild(script);
+        script.onload = script.onreadystatechange = function () {
+            if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
+                script.onload = script.onreadystatechange = null;
+                if (callback && typeof callback == "function") {
+                    callback(); //window[callback]();如果传递字符串过来 调用window['函数名']() 调用方法
+                }
+            }
+        };
+    }
+</script>
+  
+  <script src="https://wuaisong.github.io/media/scripts/tocScript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="">
+<meta name="description" content="欢迎访问[SAM]的个人博客">
+<meta name="author" content="kveln">
+<title>Docker | SAM</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="Docker | SAM » Feed"
+  href="https://wuaisong.github.io/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://wuaisong.github.io/styles/main.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+  <meta property="og:description" content="Docker" />
+  <meta property="og:url" content="https://wuaisong.github.io/post/docker-run/" />
+  <meta property="og:locale" content="zh-CN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SAM" />
+  <!-- <script src="../assets/styles/scripts/tocScript.js"></script> -->
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="https://wuaisong.github.io">SAM</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/">首页</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/tags">标签</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/archives">归档</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/post/about">关于</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          <div class="gridea-search-container">
+            <form id="gridea-search-form" style="position: relative" data-update="1701839211925"
+              action="/search/index.html">
+              <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+              <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- Page Header -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="https://wuaisong.github.io">SAM</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/">首页</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/tags">标签</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/archives">归档</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/post/about">关于</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          <div class="gridea-search-container">
+            <form id="gridea-search-form" style="position: relative" data-update="1701839211925"
+              action="/search/index.html">
+              <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+              <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="masthead" style="background-image: url('https://wuaisong.github.io/media/images/home-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+          <!-- 没Title为其他页面Header -->
+          
+            <!-- 没Title并且有headerType为Post：文章Header -->
+            <div class="post-heading">
+              <span class="tags">
+                
+                <a href="https://wuaisong.github.io/tag/WsyOhkvQZ/" class="tag">Docker</a>
+                
+              </span>
+              <h1>Docker</h1>
+              <span class="meta">
+                Posted on
+                2023-11-15，5 min read
+              </span>
+            </div>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+  <!-- Post Content -->
+  <article id="post-content-article">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto post-content-container">
+          
+          <p><a href="https://blog.csdn.net/monoplasty/article/details/118607327">参考文档</a></p>
+<h1 id="安装脚本">安装脚本</h1>
+<pre><code>vi /etc/sysconfig/network-scripts/ifcfg-ens33
+service network restart
+脚本：
+#!/bin/bash
+echo &quot;start&quot;
+cat &gt; /etc/sysconfig/network-scripts/ifcfg-ens33 &lt;&lt; EOF
+TYPE=Ethernet
+BOOTPROTO=static
+UUID=d1d808b9-3134-4c39-aac0-803c40977b41
+DEVICE=ens33
+ONBOOT=yes
+IPADDR=192.168.8.143
+NETMASK=255.255.255.0
+GATEWAY=192.168.8.2
+EOF
+sed -i '28 i dns=none' /etc/NetworkManager/NetworkManager.conf
+systemctl restart NetworkManager.service
+cat &gt; /etc/resolv.conf &lt;&lt; EOF
+nameserver 114.114.114.114
+nameserver 8.8.8.8
+EOF
+yum install -y traceroute
+yum install -y yum-utils
+yum-config-manager --add-repo  https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum list docker-ce --showduplicates | sort -r
+yum install -y docker-ce docker-ce-cli containerd.io
+#yum install docker-ce-&lt;VERSION_STRING&gt; docker-ce-cli-&lt;VERSION_STRING&gt; containerd.io
+mkdir -p /etc/docker
+tee /etc/docker/daemon.json &lt;&lt; EOF
+{
+&quot;registry-mirrors&quot;: [&quot;https://pgjhp4wg.mirror.aliyuncs.com&quot;]
+}
+EOF
+
+systemctl start docker
+systemctl enable docker
+systemctl daemon-reload
+systemctl restart docker
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+运行前：
+chmod 777 docker.sh
+</code></pre>
+<h1 id="常见docker命令">常见Docker命令</h1>
+<h2 id="监控命令">监控命令</h2>
+<pre><code>systemctl status docker
+docker stats
+docker info
+docker images
+docker search 镜像名称
+docker pull 镜像名称
+docker rmi 镜像ID
+docker ps
+docker ps -a
+docker ps -f status=exited
+docker ps --help
+</code></pre>
+<h2 id="去除镜像">去除镜像</h2>
+<pre><code>docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -q)
+</code></pre>
+<h2 id="网络相关">网络相关</h2>
+<pre><code>docker network ls
+docker network inspect mynet
+docker network create -d bridge mynet
+docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 mynet
+docker run -d -P --name tomcat-net-01 --net mynet tomcat
+docker network connect mynet tomcat01
+docker exec -it tomcat-net-01 ping tomcat-net-02
+docker run -d -P --name tomcat03 --link tomcat01:t1 tomcat
+apt-get update
+apt install iputils-ping
+apt install net-tools
+</code></pre>
+<h2 id="容器自启">容器自启</h2>
+<pre><code>docker update --restart=always 容器名或容器ID
+docker container update --restart=【容器策略】 容器名称
+# no 容器退出时不重启容器
+# on-failure 只有在非零状态退出时才重新启动容器 --restart=on-failure:【重启次数】
+# always 无论退出状态如何都
+</code></pre>
+<h2 id="复制容器内文件">复制容器内文件</h2>
+<pre><code>docker cp nacos:/home/nacos/conf/application.properties ./application.properties
+</code></pre>
+<h2 id="转移镜像命令">转移镜像命令</h2>
+<pre><code>docker save -o ./alpine-ffmpeg-3.15.tar alpine-ffmpeg:3.15
+docker load -i alpine-ffmpeg-3.15.tar
+</code></pre>
+<h1 id="常见docker环境">常见Docker环境</h1>
+<h2 id="创建mqtt">创建MQTT</h2>
+<pre><code>docker run -d --name=mosquitto --privileged -p 1883:1883 -p 9001:9001 eclipse-mosquitto:1.6.14
+</code></pre>
+<h2 id="创建nacos">创建Nacos</h2>
+<pre><code>docker run -d --restart=unless-stopped --name nacos -p 8848:8848 -p 9848:9848 -e PREFER_HOST_MODE=127.0.0.1 -e MODE=standalone nacos/nacos-server:2.0.2
+</code></pre>
+<h2 id="创建nacos指定mysql">创建Nacos指定mysql</h2>
+<pre><code>docker run -d --restart=unless-stopped --name nacos -p 8848:8848 -p 9848:9848 -e MYSQL_SERVICE_DB_NAME=nacos -e PREFER_HOST_MODE=127.0.0.1 -e MYSQL_SERVICE_PASSWORD=root -e MYSQL_SERVICE_USER=root -e MYSQL_SERVICE_HOST=172.17.0.4 -e SPRING_DATASOURCE_PLATFORM=mysql -e MODE=standalone nacos/nacos-server:2.0.2
+</code></pre>
+<h2 id="创建redis">创建redis</h2>
+<pre><code>docker run --restart unless-stopped -d --name redis -p 6379:6379 redis
+</code></pre>
+<h2 id="创建zookeeper">创建zookeeper</h2>
+<pre><code>docker run --restart unless-stopped --name zookeeper -p 2181:2181 -d zookeeper:latest
+</code></pre>
+<h2 id="创建rabbitmq">创建rabbitmq</h2>
+<pre><code>docker run -d --name myrabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.7-management
+</code></pre>
+<h2 id="创建mysql8">创建mysql8</h2>
+<pre><code>docker run --restart unless-stopped -d --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e TZ=Asia/Shanghai mysql:8 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password --lower_case_table_names=1 --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+</code></pre>
+
+          <div class="toc-container"><ul class="markdownIt-TOC">
+<li><a href="#%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC">安装脚本</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81docker%E5%91%BD%E4%BB%A4">常见Docker命令</a>
+<ul>
+<li><a href="#%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4">监控命令</a></li>
+<li><a href="#%E5%8E%BB%E9%99%A4%E9%95%9C%E5%83%8F">去除镜像</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3">网络相关</a></li>
+<li><a href="#%E5%AE%B9%E5%99%A8%E8%87%AA%E5%90%AF">容器自启</a></li>
+<li><a href="#%E5%A4%8D%E5%88%B6%E5%AE%B9%E5%99%A8%E5%86%85%E6%96%87%E4%BB%B6">复制容器内文件</a></li>
+<li><a href="#%E8%BD%AC%E7%A7%BB%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4">转移镜像命令</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B8%B8%E8%A7%81docker%E7%8E%AF%E5%A2%83">常见Docker环境</a>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BAmqtt">创建MQTT</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BAnacos">创建Nacos</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BAnacos%E6%8C%87%E5%AE%9Amysql">创建Nacos指定mysql</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BAredis">创建redis</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BAzookeeper">创建zookeeper</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BArabbitmq">创建rabbitmq</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BAmysql8">创建mysql8</a></li>
+</ul>
+</li>
+</ul>
+</div>
+          
+          <hr />
+          <p class="next-post">下一篇：
+            <a href="https://wuaisong.github.io/post/linux_status/">
+              <span class="post-title">
+                Linux&rarr;
+              </span>
+            </a>
+          </p>
+          
+          <div class="comment" style="text-align: center;">
+            
+
+            
+            
+          </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <!-- <li class="list-inline-item">
+              <a href="https://wuaisong.github.io/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li> -->
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>SAM</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://wuaisong.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://wuaisong.github.io/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  
+  <div id="landlord-parent">
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+</div>
+
+<script type="text/javascript">
+    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+        //移动端
+        console.log("------ 移动端");
+    } else {
+        console.log("------ PC端 " + navigator.userAgent);
+
+        addScript("https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js", () => {
+            // 加载完成后再loadlive2d
+            loadlive2d("live2d", "https://wuaisong.github.io/media/live2d/assets/hijiki.model.json");
+        });
+
+        var home_Path = "https://wuaisong.github.io/";
+        addScript("https://wuaisong.github.io/media/live2d/js/message.js", () => { });
+    }
+
+    // 插入js文件，完成后callback
+    function addScript(jsfile, callback) {
+        var landlord_parent = document.getElementById("landlord-parent");
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = jsfile;
+        landlord_parent.appendChild(script);
+        script.onload = script.onreadystatechange = function () {
+            if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
+                script.onload = script.onreadystatechange = null;
+                if (callback && typeof callback == "function") {
+                    callback(); //window[callback]();如果传递字符串过来 调用window['函数名']() 调用方法
+                }
+            }
+        };
+    }
+</script>
+  
+  <script src="https://wuaisong.github.io/media/scripts/tocScript.js"></script>
+</body>
+
+</html>
